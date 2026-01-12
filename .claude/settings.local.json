@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest init:*)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(npm run build:*)",
+      "mcp__supabase__get_project_url",
+      "mcp__supabase__list_tables",
+      "Bash(dir \"%USERPROFILE%\" /a:h)",
+      "Bash(findstr:*)",
+      "Bash(cmd /c \"dir C:\\\\Users\\\\Dell /a:h 2>nul | findstr -i claude\")",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(git config:*)"
+    ]
+  }
+}
