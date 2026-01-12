@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border/40 bg-background pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
           <div className="md:col-span-2 space-y-4">
             <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500">
               Millionsystem
@@ -17,6 +17,11 @@ export function Footer() {
               Crafting exceptional digital experiences for forward-thinking brands.
               We build web applications that look beautiful and perform flawlessly.
             </p>
+            <div className="pt-4">
+              <p className="text-sm font-semibold text-white">Headquarters</p>
+              <p className="text-sm text-muted-foreground">Turner Business Centre, Greengate</p>
+              <p className="text-sm text-muted-foreground">Middleton, Manchester M24 1RU</p>
+            </div>
           </div>
 
           <div className="space-y-4">
@@ -36,6 +41,15 @@ export function Footer() {
               <li><Link href="/portfolio" className="hover:text-primary transition-colors">Portfolio</Link></li>
               <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
               <li><Link href="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-semibold text-foreground">Legal</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
+              <li><Link href="/cookies" className="hover:text-primary transition-colors">Cookie Policy</Link></li>
             </ul>
           </div>
         </div>

@@ -1,0 +1,1 @@
+![Project Carousel Mockup](PROJECT_CAROUSEL_MOCKUP_PLACEHOLDER)

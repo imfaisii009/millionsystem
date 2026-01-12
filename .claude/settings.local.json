@@ -19,7 +19,16 @@
       "Bash(git config:*)",
       "mcp__supabase__apply_migration",
       "Bash(npx tsc:*)",
-      "mcp__supabase__list_migrations"
+      "mcp__supabase__list_migrations",
+      "Bash(ls:*)",
+      "Bash(npx playwright:*)",
+      "Bash(node test-cube.mjs:*)",
+      "Bash(netstat:*)",
+      "Bash(del /f test-cube.mjs)",
+      "Bash(npm i:*)",
+      "Bash(find:*)",
+      "mcp__supabase__get_publishable_keys",
+      "mcp__supabase__search_docs"
     ]
   }
 }
