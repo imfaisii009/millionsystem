@@ -29,7 +29,11 @@
       "Bash(find:*)",
       "mcp__supabase__get_publishable_keys",
       "mcp__supabase__search_docs",
-      "Bash(pnpm install:*)"
+      "Bash(pnpm install:*)",
+      "Bash(curl -s \"https://api.telegram.org/bot8477622211:AAH9l26sjRkEGn3HkkW8zkfrTKSvVc4Xbh4/getWebhookInfo\")",
+      "Bash(python -m json.tool:*)",
+      "Bash(curl -s -X POST \"https://api.telegram.org/bot8477622211:AAH9l26sjRkEGn3HkkW8zkfrTKSvVc4Xbh4/setWebhook\" -H \"Content-Type: application/json\" -d '{\n    \"\"url\"\": \"\"https://millionsystems.com/api/telegram/webhook\"\",\n    \"\"secret_token\"\": \"\"adf976fc31ae8709fee4743814a94b36\"\",\n    \"\"allowed_updates\"\": [\"\"message\"\", \"\"edited_message\"\"],\n    \"\"drop_pending_updates\"\": false\n  }')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" -X POST \"https://millionsystems.com/api/telegram/webhook\" -H \"Content-Type: application/json\" -d '{}')"
     ]
   }
 }

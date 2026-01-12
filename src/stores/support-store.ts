@@ -402,10 +402,12 @@ export const useSupportStore = create<SupportState>((set, get) => ({
           filter: `conversation_id=eq.${conversationId}`,
         },
         (payload) => {
+          console.log('[SupportStore] Realtime message received:', payload)
           const newMessage = payload.new as SupportMessage
 
           // Skip user messages (handled by optimistic updates)
           if (newMessage.sender_type === 'user') {
+            console.log('[SupportStore] Skipping user message')
             return
           }
 
@@ -413,9 +415,11 @@ export const useSupportStore = create<SupportState>((set, get) => ({
 
           // Check for duplicates
           if (messages.some((m) => m.id === newMessage.id)) {
+            console.log('[SupportStore] Skipping duplicate message:', newMessage.id)
             return
           }
 
+          console.log('[SupportStore] Adding new message to state:', newMessage.id)
           // Add message to state
           set((state) => ({
             messages: [...state.messages, newMessage],
@@ -423,8 +427,14 @@ export const useSupportStore = create<SupportState>((set, get) => ({
           }))
         }
       )
-      .subscribe((status) => {
-        console.log('[SupportStore] Subscription status:', status)
+      .subscribe((status, err) => {
+        console.log('[SupportStore] Subscription status:', status, 'channel:', channelName)
+        if (err) {
+          console.error('[SupportStore] Subscription error:', err)
+        }
+        if (status === 'SUBSCRIBED') {
+          console.log('[SupportStore] Successfully subscribed to realtime for conversation:', conversationId)
+        }
       })
 
     // Store subscription info
