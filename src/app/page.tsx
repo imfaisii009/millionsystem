@@ -86,22 +86,24 @@ export default function Home() {
                                 <ThreeRubiksCube />
                             </div>
 
-                            {/* Floating Decorative Code Snippet - Top Right */}
-                            <div className="absolute top-10 right-10 backdrop-blur-xl bg-white/5 border border-white/20 p-4 rounded-xl shadow-2xl w-64 hidden lg:block animate-float-slow">
+                            {/* Floating Decorative Code Snippet - Top Left (Gap) */}
+                            <div className="absolute top-24 left-[-165px] scale-90 backdrop-blur-xl bg-white/5 border border-white/20 p-4 rounded-xl shadow-2xl w-64 hidden lg:block animate-float-slow -z-10">
                                 <div className="flex items-center gap-2 mb-3 border-b border-white/10 pb-2">
                                     <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
                                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
                                     <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
                                 </div>
-                                <div className="space-y-2">
-                                    <div className="h-1.5 w-3/4 bg-white/20 rounded animate-pulse" />
-                                    <div className="h-1.5 w-1/2 bg-white/20 rounded animate-pulse delay-75" />
-                                    <div className="h-1.5 w-full bg-white/10 rounded animate-pulse delay-150" />
+                                <div className="text-[10px] font-mono text-blue-300 mb-1 flex justify-between">
+                                    <span>&gt; neural_net.config</span>
+                                    <span className="text-blue-400">● Ready</span>
+                                </div>
+                                <div className="text-[10px] font-mono text-gray-300 leading-relaxed opacity-80">
+                                    <span className="text-purple-400">const</span> <span className="text-yellow-300">engine</span> <span className="text-white">=</span> <span className="text-purple-400">await</span> <span className="text-green-300">start()</span>;
                                 </div>
                             </div>
 
-                            {/* Floating Decorative Status Card - Bottom Left of Orb */}
-                            <div className="absolute bottom-32 left-10 backdrop-blur-xl bg-black/60 border border-purple-500/40 p-4 rounded-xl shadow-[0_0_30px_rgba(139,92,246,0.15)] w-72 hidden lg:block animate-float-delayed">
+                            {/* Floating Decorative Status Card - Bottom Left (Gap) */}
+                            <div className="absolute bottom-20 left-[-330px] backdrop-blur-xl bg-black/60 border border-purple-500/40 p-4 rounded-xl shadow-[0_0_30px_rgba(139,92,246,0.15)] w-72 hidden lg:block animate-float-delayed -z-10">
                                 <div className="text-[10px] font-mono text-purple-300 mb-1 flex justify-between">
                                     <span>&gt; system_override.ts</span>
                                     <span className="text-green-400">● Active</span>

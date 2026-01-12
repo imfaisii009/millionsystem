@@ -58,7 +58,6 @@ export default function ThreeRubiksCube() {
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(width, height);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.physicallyCorrectLights = true;
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure = 1.0;
 
@@ -94,6 +93,8 @@ export default function ThreeRubiksCube() {
         controls.enablePan = false;
         controls.minDistance = 4;
         controls.maxDistance = 15;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 3.0;
         controlsRef.current = controls;
 
         // --- CREATE CUBE ---
@@ -108,29 +109,6 @@ export default function ThreeRubiksCube() {
             renderer.render(scene, camera);
         };
         animate(0);
-
-        // --- DOM EVENTS (Reliability Fix) ---
-        // Attaching directly to buttons to bypass any React hydration issues
-        const scrambleBtn = document.getElementById("rubiks-scramble");
-        const solveBtn = document.getElementById("rubiks-solve");
-        const resetBtn = document.getElementById("rubiks-reset");
-
-        const onScrambleValues = (e: Event) => {
-            e.preventDefault(); e.stopPropagation();
-            handleScramble();
-        };
-        const onSolveValues = (e: Event) => {
-            e.preventDefault(); e.stopPropagation();
-            handleSolve();
-        };
-        const onResetValues = (e: Event) => {
-            e.preventDefault(); e.stopPropagation();
-            handleResetCamera();
-        };
-
-        if (scrambleBtn) scrambleBtn.addEventListener("click", onScrambleValues);
-        if (solveBtn) solveBtn.addEventListener("click", onSolveValues);
-        if (resetBtn) resetBtn.addEventListener("click", onResetValues);
 
         // --- RESIZE ---
         const handleResize = () => {
@@ -150,10 +128,6 @@ export default function ThreeRubiksCube() {
             window.removeEventListener("resize", handleResize);
             cancelAnimationFrame(frameIdRef.current);
             controls.dispose();
-
-            if (scrambleBtn) scrambleBtn.removeEventListener("click", onScrambleValues);
-            if (solveBtn) solveBtn.removeEventListener("click", onSolveValues);
-            if (resetBtn) resetBtn.removeEventListener("click", onResetValues);
 
             if (rendererRef.current) {
                 rendererRef.current.dispose();
@@ -227,7 +201,7 @@ export default function ThreeRubiksCube() {
         }
     };
 
-    const rotateLayer = (axis: string, index: number, dir: number, duration = 300, isSolvingMove = false) => {
+    const rotateLayer = (axis: string, index: number, dir: number, duration = 300, isSolvingMove = false, updateState = true) => {
         if (isAnimatingRef.current && duration > 0) return;
         isAnimatingRef.current = true;
 
@@ -267,7 +241,9 @@ export default function ThreeRubiksCube() {
 
                 if (!isSolvingMove) {
                     moveHistoryRef.current.push({ axis, index, dir });
-                    setMoveCount(c => c + 1);
+                    if (updateState) {
+                        setMoveCount(c => c + 1);
+                    }
                 }
 
                 processQueue();
@@ -278,7 +254,7 @@ export default function ThreeRubiksCube() {
     const processQueue = () => {
         if (!isAnimatingRef.current && moveQueueRef.current.length > 0) {
             const move = moveQueueRef.current.shift();
-            rotateLayer(move.axis, move.index, move.dir, move.duration, move.isSolving);
+            rotateLayer(move.axis, move.index, move.dir, move.duration, move.isSolving, move.updateState);
         } else if (moveQueueRef.current.length === 0 && isSolving) {
             setToastMessage("Cube Solved!");
             setTimeout(() => setToastMessage(null), 3000);
@@ -290,12 +266,17 @@ export default function ThreeRubiksCube() {
     const handleScramble = (count = 15) => {
         console.log("Scramble Triggered");
         if (isAnimatingRef.current) return;
+
+        // Optimistically update move count so UI enables immediately
+        setMoveCount(c => c + count);
+
         const axes = ['x', 'y', 'z'];
         for (let i = 0; i < count; i++) {
             const axis = axes[Math.floor(Math.random() * axes.length)];
             const index = Math.floor(Math.random() * 3) - 1;
             const dir = Math.random() > 0.5 ? 1 : -1;
-            moveQueueRef.current.push({ axis, index, dir, duration: 100, isSolving: false });
+            // Don't update state individually per move, we did it in bulk
+            moveQueueRef.current.push({ axis, index, dir, duration: 100, isSolving: false, updateState: false });
         }
         processQueue();
     };
@@ -335,31 +316,40 @@ export default function ThreeRubiksCube() {
     return (
         <div className="relative w-full h-[500px] flex items-center justify-center">
             {/* Canvas Container */}
-            <div ref={mountRef} className="absolute inset-0 z-10 cursor-move" />
+            <div ref={mountRef} className="absolute inset-0 z-10 cursor-grab active:cursor-grabbing" />
 
             {/* UI Overlay - Z-50 to force clickable */}
             <div className="absolute inset-x-0 bottom-4 flex flex-col items-center gap-4 z-50 pointer-events-none">
 
-                {/* Move Counter */}
-                {moveCount > 0 && (
-                    <div className="bg-white/5 backdrop-blur-md px-4 py-1 rounded-full border border-white/10 text-xs font-mono text-purple-300 pointer-events-auto">
-                        Moves: {moveCount}
-                    </div>
-                )}
-
                 {/* Controls */}
                 <div className="flex gap-2 p-2 bg-black/40 backdrop-blur-xl rounded-2xl border border-white/10 pointer-events-auto shadow-2xl">
-                    <button id="rubiks-scramble" type="button" className="p-3 rounded-xl hover:bg-white/10 text-zinc-400 hover:text-white transition-colors flex flex-col items-center gap-1 min-w-[60px] cursor-pointer relative z-50">
+                    <button
+                        id="rubiks-scramble"
+                        type="button"
+                        onClick={() => handleScramble()}
+                        className="p-3 rounded-xl hover:bg-white/10 text-zinc-400 hover:text-white transition-colors flex flex-col items-center gap-1 min-w-[60px] cursor-pointer relative z-50 overflow-visible"
+                    >
                         <Shuffle size={18} />
                         <span className="text-[10px] font-medium">Scramble</span>
                     </button>
                     <div className="w-px bg-white/10 my-1" />
-                    <button id="rubiks-solve" type="button" disabled={moveCount === 0 || isSolving} className={`p-3 rounded-xl hover:bg-white/10 text-indigo-400 hover:text-indigo-300 transition-colors flex flex-col items-center gap-1 min-w-[60px] cursor-pointer relative z-50 ${moveCount === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                    <button
+                        id="rubiks-solve"
+                        type="button"
+                        disabled={moveCount === 0 || isSolving}
+                        onClick={handleSolve}
+                        className={`p-3 rounded-xl hover:bg-white/10 text-indigo-400 hover:text-indigo-300 transition-colors flex flex-col items-center gap-1 min-w-[60px] cursor-pointer relative z-50 overflow-visible ${moveCount === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    >
                         <Play size={18} />
                         <span className="text-[10px] font-medium">Solve</span>
                     </button>
                     <div className="w-px bg-white/10 my-1" />
-                    <button id="rubiks-reset" type="button" className="p-3 rounded-xl hover:bg-white/10 text-zinc-400 hover:text-white transition-colors flex flex-col items-center gap-1 min-w-[60px] cursor-pointer relative z-50">
+                    <button
+                        id="rubiks-reset"
+                        type="button"
+                        onClick={handleResetCamera}
+                        className="p-3 rounded-xl hover:bg-white/10 text-zinc-400 hover:text-white transition-colors flex flex-col items-center gap-1 min-w-[60px] cursor-pointer relative z-50 overflow-visible"
+                    >
                         <RotateCcw size={18} />
                         <span className="text-[10px] font-medium">Reset</span>
                     </button>

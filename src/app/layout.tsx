@@ -5,6 +5,7 @@ import { Providers } from "@/providers";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { SupportWidget } from "@/components/support";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +44,7 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
+          <SupportWidget />
         </Providers>
       </body>
     </html>
