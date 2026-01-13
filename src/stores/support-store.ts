@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { createClient } from '@/lib/supabase/client'
+import type { RealtimePostgresInsertPayload } from '@supabase/supabase-js'
 import type {
   SupportState,
   SupportConversation,
@@ -401,7 +402,7 @@ export const useSupportStore = create<SupportState>((set, get) => ({
           table: 'support_messages',
           filter: `conversation_id=eq.${conversationId}`,
         },
-        (payload) => {
+        (payload: RealtimePostgresInsertPayload<SupportMessage>) => {
           console.log('[SupportStore] Realtime message received:', payload)
           const newMessage = payload.new as SupportMessage
 
@@ -427,7 +428,7 @@ export const useSupportStore = create<SupportState>((set, get) => ({
           }))
         }
       )
-      .subscribe((status, err) => {
+      .subscribe((status: string, err?: Error) => {
         console.log('[SupportStore] Subscription status:', status, 'channel:', channelName)
         if (err) {
           console.error('[SupportStore] Subscription error:', err)

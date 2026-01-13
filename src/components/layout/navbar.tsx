@@ -10,8 +10,8 @@ import { Button } from "@/components/ui/button";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "Portfolio", href: "/portfolio" },
+  { name: "Services", href: "/#services" },
+  { name: "Portfolio", href: "/#portfolio" },
   { name: "Contact", href: "/#contact" },
 ];
 
@@ -76,10 +76,12 @@ export function Navbar() {
               ))}
             </div>
 
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 rounded-full px-6">
-              Start Project
-              <ChevronRight className="w-4 h-4 ml-1" />
-            </Button>
+            <Link href="/#contact">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 rounded-full px-6">
+                Start Project
+                <ChevronRight className="w-4 h-4 ml-1" />
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -118,9 +120,11 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="pt-4 mt-2 border-t border-border/50">
-                <Button className="w-full bg-primary text-primary-foreground rounded-xl py-6 text-lg">
-                  Start Project
-                </Button>
+                <Link href="/#contact" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full bg-primary text-primary-foreground rounded-xl py-6 text-lg">
+                    Start Project
+                  </Button>
+                </Link>
               </div>
             </div>
           </motion.div>

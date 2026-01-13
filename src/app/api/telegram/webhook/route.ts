@@ -34,6 +34,12 @@ export async function POST(request: NextRequest) {
     // Extract reply info
     const replyInfo = TelegramService.extractReplyInfo(message)
 
+    console.log('[Webhook] Extracted reply info:', JSON.stringify(replyInfo))
+    console.log('[Webhook] Raw message thread info:', {
+      message_thread_id: message.message_thread_id,
+      reply_to_message: message.reply_to_message?.message_thread_id,
+    })
+
     // Must be in a topic (forum thread)
     if (!replyInfo.topicId) {
       console.log('[Webhook] Message not in a topic, ignoring')
@@ -46,6 +52,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Find conversation by topic ID
+    console.log('[Webhook] Looking up conversation for topic ID:', replyInfo.topicId)
     const conversation = await SupportService.getConversationByTelegramTopicId(
       replyInfo.topicId
     )
@@ -54,6 +61,8 @@ export async function POST(request: NextRequest) {
       console.log('[Webhook] No conversation found for topic:', replyInfo.topicId)
       return NextResponse.json({ ok: true })
     }
+
+    console.log('[Webhook] Found conversation:', conversation.id, 'anonymous_id:', conversation.anonymous_id)
 
     // Handle photo if present
     let imageUrl: string | null = null

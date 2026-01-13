@@ -22,6 +22,7 @@ const COLORS = {
 export default function ThreeRubiksCube() {
     const mountRef = useRef<HTMLDivElement>(null);
     const [mounted, setMounted] = useState(false);
+    const [isReady, setIsReady] = useState(false);
     const [canSolve, setCanSolve] = useState(false);
 
     // All mutable state in refs
@@ -256,6 +257,7 @@ export default function ThreeRubiksCube() {
             camera.lookAt(0, 0, 0);
 
             renderer.render(scene, camera);
+            if (!isReady) setIsReady(true);
         };
         animate(0);
 
@@ -417,55 +419,53 @@ export default function ThreeRubiksCube() {
     }, []);
 
     if (!mounted) {
-        return (
-            <div className="w-full h-[500px] flex items-center justify-center text-purple-500/30">
-                Loading 3D...
-            </div>
-        );
+        return <div className="w-full h-[500px]" />;
     }
 
     return (
         <div className="relative w-full h-[500px] flex items-center justify-center">
+
             {/* Canvas Container */}
-            <div ref={mountRef} className="absolute inset-0 z-10" />
+            <div ref={mountRef} className={`absolute inset-0 z-10 transition-opacity duration-700 ${isReady ? "opacity-100" : "opacity-0"}`} />
 
-            {/* UI Overlay */}
-            <div className="absolute inset-x-0 bottom-4 flex flex-col items-center gap-4 z-50 pointer-events-none">
-                {/* Controls */}
-                <div className="flex gap-2 p-2 bg-black/40 backdrop-blur-xl rounded-2xl border border-white/10 pointer-events-auto shadow-2xl">
-                    <button
-                        type="button"
-                        onClick={handleScramble}
-                        className="p-3 rounded-xl hover:bg-white/10 text-zinc-400 hover:text-white transition-colors flex flex-col items-center gap-1 min-w-[60px]"
-                    >
-                        <Shuffle size={18} />
-                        <span className="text-[10px] font-medium">Scramble</span>
-                    </button>
+            {/* UI Overlay - Only visible when ready */}
+            {isReady && (
+                <div className="absolute inset-x-0 bottom-4 flex flex-col items-center gap-4 z-50 pointer-events-none animate-in fade-in slide-in-from-bottom-4 duration-700">
+                    <div className="flex gap-2 p-2 bg-black/40 backdrop-blur-xl rounded-2xl border border-white/10 pointer-events-auto shadow-2xl">
+                        <button
+                            type="button"
+                            onClick={handleScramble}
+                            className="p-3 rounded-xl hover:bg-white/10 text-zinc-400 hover:text-white transition-colors flex flex-col items-center gap-1 min-w-[60px]"
+                        >
+                            <Shuffle size={18} />
+                            <span className="text-[10px] font-medium">Scramble</span>
+                        </button>
 
-                    <div className="w-px bg-white/10 my-1" />
+                        <div className="w-px bg-white/10 my-1" />
 
-                    <button
-                        type="button"
-                        disabled={!canSolve}
-                        onClick={handleSolve}
-                        className={`p-3 rounded-xl hover:bg-white/10 text-indigo-400 hover:text-indigo-300 transition-colors flex flex-col items-center gap-1 min-w-[60px] ${!canSolve ? "opacity-50 cursor-not-allowed" : ""}`}
-                    >
-                        <Sparkles size={18} />
-                        <span className="text-[10px] font-medium">Solve</span>
-                    </button>
+                        <button
+                            type="button"
+                            disabled={!canSolve}
+                            onClick={handleSolve}
+                            className={`p-3 rounded-xl hover:bg-white/10 text-indigo-400 hover:text-indigo-300 transition-colors flex flex-col items-center gap-1 min-w-[60px] ${!canSolve ? "opacity-50 cursor-not-allowed" : ""}`}
+                        >
+                            <Sparkles size={18} />
+                            <span className="text-[10px] font-medium">Solve</span>
+                        </button>
 
-                    <div className="w-px bg-white/10 my-1" />
+                        <div className="w-px bg-white/10 my-1" />
 
-                    <button
-                        type="button"
-                        onClick={handleReset}
-                        className="p-3 rounded-xl hover:bg-white/10 text-zinc-400 hover:text-white transition-colors flex flex-col items-center gap-1 min-w-[60px]"
-                    >
-                        <RotateCcw size={18} />
-                        <span className="text-[10px] font-medium">Reset</span>
-                    </button>
+                        <button
+                            type="button"
+                            onClick={handleReset}
+                            className="p-3 rounded-xl hover:bg-white/10 text-zinc-400 hover:text-white transition-colors flex flex-col items-center gap-1 min-w-[60px]"
+                        >
+                            <RotateCcw size={18} />
+                            <span className="text-[10px] font-medium">Reset</span>
+                        </button>
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 }

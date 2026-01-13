@@ -5,7 +5,8 @@ import { motion } from "framer-motion"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { Mail, Phone, MapPin, Clock, Zap, Send, Loader2, ChevronDown, MessageSquare } from "lucide-react"
+import { Mail, Phone, MapPin, Clock, Send, Loader2, ChevronDown, MessageSquare } from "lucide-react"
+import confetti from "canvas-confetti"
 import { toast } from "sonner"
 
 import { Button } from "@/components/ui/button"
@@ -88,14 +89,52 @@ export function ContactSection() {
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         setIsSubmitting(true)
-        // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 2000))
-        console.log(values)
-        toast.success("Message sent successfully!", {
-            description: "We'll get back to you within 24 hours.",
-        })
-        setIsSubmitting(false)
-        form.reset()
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(values),
+            })
+
+            const data = await response.json()
+
+            if (!response.ok) {
+                throw new Error(data.error || "Failed to send message")
+            }
+
+            // Trigger celebration confetti
+            const duration = 2000
+            const end = Date.now() + duration
+            const frame = () => {
+                confetti({
+                    particleCount: 3,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ["#a855f7", "#3b82f6", "#ec4899"],
+                })
+                confetti({
+                    particleCount: 3,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ["#a855f7", "#3b82f6", "#ec4899"],
+                })
+                if (Date.now() < end) requestAnimationFrame(frame)
+            }
+            frame()
+
+            toast.success("Message sent successfully!", {
+                description: "We'll get back to you within 24 hours.",
+            })
+            form.reset()
+        } catch (error) {
+            toast.error("Failed to send message", {
+                description: error instanceof Error ? error.message : "Please try again later.",
+            })
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     return (

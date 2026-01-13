@@ -27,19 +27,19 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/services" className="hover:text-primary transition-colors">Web Development</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors">UI/UX Design</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors">Enterprise Solutions</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors">Mobile Apps</Link></li>
+              <li><Link href="/#services" className="hover:text-primary transition-colors">Web Development</Link></li>
+              <li><Link href="/#services" className="hover:text-primary transition-colors">UI/UX Design</Link></li>
+              <li><Link href="/#services" className="hover:text-primary transition-colors">Enterprise Solutions</Link></li>
+              <li><Link href="/#services" className="hover:text-primary transition-colors">Mobile Apps</Link></li>
             </ul>
           </div>
 
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/portfolio" className="hover:text-primary transition-colors">Portfolio</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link href="/#services" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link href="/#portfolio" className="hover:text-primary transition-colors">Portfolio</Link></li>
+              <li><Link href="/#contact" className="hover:text-primary transition-colors">Contact</Link></li>
               <li><Link href="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
             </ul>
           </div>

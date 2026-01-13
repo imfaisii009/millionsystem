@@ -12,11 +12,15 @@ import { TechMarquee } from "@/components/features/tech-marquee";
 import { SDKShowcase } from "@/components/features/sdk-showcase";
 import { TrustedCompanies } from "@/components/features/trusted-companies";
 import { ContactSection } from "@/components/sections/contact-section";
+import { AboutHaysSection } from "@/components/sections/about-hays-section";
+import { CodingServicesSection } from "@/components/sections/coding-services-section";
+import { DigitalGrowthSection } from "@/components/sections/digital-growth-section";
+import { TestimonialDataStream } from "@/components/sections/testimonial-data-stream";
 import dynamic from "next/dynamic";
 
 const ThreeRubiksCube = dynamic(() => import("@/components/features/three-rubiks-cube"), {
     ssr: false,
-    loading: () => <div className="w-full h-[500px] flex items-center justify-center text-purple-500/50">Loading Simulation...</div>
+    loading: () => <div className="w-full h-[500px]" />
 });
 
 export default function Home() {
@@ -90,12 +94,16 @@ export default function Home() {
                         <div
                             className="flex flex-col sm:flex-row gap-5"
                         >
-                            <Button size="lg" className="rounded-xl text-base h-14 px-8 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white shadow-[0_0_30px_rgba(139,92,246,0.3)] border-0">
-                                Explore Our Services
-                            </Button>
-                            <Button size="lg" variant="outline" className="rounded-xl text-base h-14 px-8 border-purple-500/20 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm">
-                                View Case Studies
-                            </Button>
+                            <Link href="/#services">
+                                <Button size="lg" className="rounded-xl text-base h-14 px-8 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white shadow-[0_0_30px_rgba(139,92,246,0.3)] border-0">
+                                    Explore Our Services
+                                </Button>
+                            </Link>
+                            <Link href="/#portfolio">
+                                <Button size="lg" variant="outline" className="rounded-xl text-base h-14 px-8 border-purple-500/20 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm">
+                                    View Case Studies
+                                </Button>
+                            </Link>
                         </div>
 
 
@@ -119,6 +127,18 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Services Main Container */}
+            <div id="services">
+                {/* About & Services Section - Nano Banana Style */}
+                <AboutHaysSection />
+
+                {/* Coding Services Section - Nano Banana Style */}
+                <CodingServicesSection />
+
+                {/* Digital Growth Section - Nano Banana Style */}
+                <DigitalGrowthSection />
+            </div>
+
             {/* Tech Marquee - Section 2 */}
             <section className="w-full">
                 <TechMarquee />
@@ -131,43 +151,18 @@ export default function Home() {
             <TrustedCompanies />
 
             {/* Project Stack Section - Section 5 */}
-            <section className="container mx-auto px-4 md:px-6">
+            <section id="portfolio" className="container mx-auto px-4 md:px-6">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">Selected Work</h2>
                 <ProjectStack />
-            </section>
-
-            {/* Services Section - Section 6 */}
-            <section className="container mx-auto px-4 md:px-6 py-20">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Empower your product with our versatile SDK</h2>
-                    <p className="text-muted-foreground">Seamlessly integrate advanced features into your app with our developer-friendly, scalable solutions.</p>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-8">
-                    {[
-                        { title: "Web Apps", icon: Laptop, desc: "High-performance React & Next.js applications tailored to your business needs." },
-                        { title: "Mobile Solutions", icon: Globe, desc: "Cross-platform mobile experiences that feel native and fast." },
-                        { title: "Enterprise Systems", icon: Rocket, desc: "Scalable backend architectures built secure and robust." },
-                    ].map((service, i) => (
-                        <motion.div
-                            key={i}
-                            whileHover={{ y: -5 }}
-                            className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-colors cursor-pointer group hover:bg-white/10"
-                        >
-                            <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-                                <service.icon className="w-6 h-6" />
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2 text-white">{service.title}</h3>
-                            <p className="text-muted-foreground">{service.desc}</p>
-                        </motion.div>
-                    ))}
-                </div>
             </section>
 
             {/* Smart Map Section - Section 7 */}
             <section className="container mx-auto px-4 md:px-6">
                 <SmartMap />
             </section>
+
+            {/* Testimonials Section - Nano Banana Style */}
+            <TestimonialDataStream />
 
             {/* Contact Section - Section 8 */}
             <ContactSection />
