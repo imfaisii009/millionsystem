@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     description: "Understand how MillionSystems uses cookies and tracking technologies on our website.",
 };
 
+// ISR: Revalidate legal pages every 24 hours
+export const revalidate = 86400;
+
 export default function CookiePolicyPage() {
     const lastUpdated = "January 12, 2026";
 

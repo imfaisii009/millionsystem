@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description: "Simple, transparent pricing",
 };
 
+// ISR: Revalidate pricing page every hour
+export const revalidate = 3600;
+
 const plans = [
   {
     name: "Free",

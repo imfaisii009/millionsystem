@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: "Learn more about MillionSystems",
 };
 
+// ISR: Revalidate about page every 24 hours
+export const revalidate = 86400;
+
 export default function AboutPage() {
   return (
     <div className="container pt-24 pb-20">

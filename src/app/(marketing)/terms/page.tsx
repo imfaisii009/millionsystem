@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     description: "Read the terms and conditions for using MillionSystems's services and website.",
 };
 
+// ISR: Revalidate legal pages every 24 hours
+export const revalidate = 86400;
+
 export default function TermsOfServicePage() {
     const lastUpdated = "January 12, 2026";
 

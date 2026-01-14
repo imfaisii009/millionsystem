@@ -1,0 +1,19 @@
+{
+  "name": "MillionSystems",
+  "short_name": "MillionSys",
+  "description": "Engineering Infinite Possibilities - From hyper-scalable platforms to AI-driven ecosystems",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030014",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "technology", "productivity"]
+}

@@ -23,7 +23,11 @@ export async function GET(req: NextRequest) {
         }
 
         const data = await response.json()
-        return NextResponse.json(data)
+        return NextResponse.json(data, {
+            headers: {
+                'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=172800',
+            }
+        })
     } catch (error) {
         console.error('Geo API Error:', error)
         return NextResponse.json(

@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
 import { getAdminClient } from '@/lib/supabase/admin';
 
-// CORS headers for external access
+// CORS headers for external access + CDN caching
 const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
 };
 
 // Handle CORS preflight requests

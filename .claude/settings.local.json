@@ -38,7 +38,18 @@
       "Bash(claude mcp list:*)",
       "Bash(claude mcp remove:*)",
       "Bash(claude mcp add:*)",
-      "Bash(pnpm add:*)"
+      "Bash(pnpm add:*)",
+      "Bash(curl:*)",
+      "Bash(npx lighthouse:*)",
+      "Bash(tasklist:*)",
+      "Bash(dir \"c:\\\\laragon\\\\www\\\\Millionsystem\" /b /s)",
+      "Bash(npx next build:*)",
+      "mcp__supabase__get_logs",
+      "Bash(taskkill:*)",
+      "Bash(openssl rand:*)",
+      "Bash(timeout:*)",
+      "Bash(ping:*)",
+      "Bash(pnpm build:*)"
     ]
   }
 }

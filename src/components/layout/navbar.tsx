@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -59,12 +58,7 @@ export function Navbar() {
                 >
                   {item.name}
                   {pathname === item.href && (
-                    <motion.div
-                      layoutId="navbar-indicator"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
-                      initial={false}
-                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    />
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full transition-all duration-300" />
                   )}
                 </Link>
               ))}
@@ -88,42 +82,38 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border/50 overflow-hidden"
-          >
-            <div className="container px-4 py-6 flex flex-col gap-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "text-lg font-medium py-2 border-l-2 pl-4 transition-all",
-                    pathname === item.href
-                      ? "border-primary text-primary bg-primary/5"
-                      : "border-transparent text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="pt-4 mt-2 border-t border-border/50">
-                <Link href="/#contact" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full bg-primary text-primary-foreground rounded-xl py-6 text-lg">
-                    Start Project
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </motion.div>
+      {/* Mobile Menu - CSS-only animation */}
+      <div
+        className={cn(
+          "md:hidden bg-background/95 backdrop-blur-xl border-b border-border/50 overflow-hidden transition-all duration-300",
+          isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
         )}
-      </AnimatePresence>
+      >
+        <div className="container px-4 py-6 flex flex-col gap-4">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              className={cn(
+                "text-lg font-medium py-2 border-l-2 pl-4 transition-all",
+                pathname === item.href
+                  ? "border-primary text-primary bg-primary/5"
+                  : "border-transparent text-muted-foreground hover:text-foreground"
+              )}
+            >
+              {item.name}
+            </Link>
+          ))}
+          <div className="pt-4 mt-2 border-t border-border/50">
+            <Link href="/#contact" onClick={() => setIsOpen(false)}>
+              <Button className="w-full bg-primary text-primary-foreground rounded-xl py-6 text-lg">
+                Start Project
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 }

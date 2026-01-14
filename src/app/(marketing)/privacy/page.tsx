@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     description: "Learn how MillionSystems protects and manages your personal data.",
 };
 
+// ISR: Revalidate legal pages every 24 hours
+export const revalidate = 86400;
+
 export default function PrivacyPolicyPage() {
     const lastUpdated = "January 12, 2026";
 

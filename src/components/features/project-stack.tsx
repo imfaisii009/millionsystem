@@ -252,7 +252,7 @@ export function ProjectStack() {
                         <div className={`w-full h-full flex flex-col md:flex-row rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-3xl transition-all duration-700 ${projects[currentIndex].shadow}`}>
 
                             {/* Subtle Inner Noise/Texture */}
-                            <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none" />
+                            <div className="absolute inset-0 opacity-[0.03] bg-[url('/noise.svg')] pointer-events-none" />
 
                             {/* Left Content Half */}
                             <div className="w-full md:w-[45%] p-8 md:p-14 flex flex-col justify-center relative z-20">

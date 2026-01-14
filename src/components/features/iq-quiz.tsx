@@ -152,7 +152,7 @@ export function IQQuiz() {
                 >
                     <div className="rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 md:p-12 relative overflow-hidden shadow-[0_0_100px_-20px_rgba(168,85,247,0.01)] min-h-[400px]">
                         {/* Noise Texture */}
-                        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none" />
+                        <div className="absolute inset-0 opacity-[0.03] bg-[url('/noise.svg')] pointer-events-none" />
 
                         {isLoading ? (
                             <div className="flex flex-col items-center justify-center py-20 h-full">

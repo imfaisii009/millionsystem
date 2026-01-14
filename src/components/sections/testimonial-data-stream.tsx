@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Quote, Star, ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 interface Testimonial {
     id: number;
@@ -120,10 +121,12 @@ export function TestimonialDataStream() {
                                         <div className="relative">
                                             <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-600/20 to-purple-600/20 border border-white/10 flex items-center justify-center overflow-hidden relative z-10 shadow-[0_0_20px_rgba(59,130,246,0.3)]">
                                                 <div className="absolute inset-0 bg-blue-500/10" />
-                                                <img
-                                                    src={testimonials[activeIndex].avatar}
+                                                <Image
+                                                    src={testimonials[activeIndex].avatar || "/avatars/ceo1.png"}
                                                     alt={testimonials[activeIndex].name}
-                                                    className={`w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500`}
+                                                    fill
+                                                    sizes="80px"
+                                                    className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                                                 />
                                             </div>
                                             <div className="absolute inset-0 bg-blue-500/40 blur-2xl rounded-full -z-10" />
