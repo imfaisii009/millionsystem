@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
         name: "Victor Thorne",
         role: "CEO",
         company: "Vertex",
-        content: "Millionsystem didn't just build a platform; they engineered a digital legacy. Their attention to architectural scalability is, frankly, generations ahead of the competition.",
+        content: "MillionSystems didn't just build a platform; they engineered a digital legacy. Their attention to architectural scalability is, frankly, generations ahead of the competition.",
         metrics: "99.9% Uptime Scaled",
         avatar: "/avatars/ceo1.png"
     },
@@ -47,7 +47,7 @@ const testimonials: Testimonial[] = [
         name: "Octavia Jenkins",
         role: "CEO",
         company: "Omni",
-        content: "Working with Millionsystem is like having a direct line to the future. Their full-stack capabilities transformed our complex bio-data into a stunning, intuitive interface.",
+        content: "Working with MillionSystems is like having a direct line to the future. Their full-stack capabilities transformed our complex bio-data into a stunning, intuitive interface.",
         metrics: "50% Latency Reduction",
         avatar: "/avatars/ceo4.png"
     },

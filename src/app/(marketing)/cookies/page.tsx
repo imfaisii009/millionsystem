@@ -2,8 +2,8 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Cookie Policy | Millionsystem",
-    description: "Understand how Millionsystem uses cookies and tracking technologies on our website.",
+    title: "Cookie Policy | MillionSystems",
+    description: "Understand how MillionSystems uses cookies and tracking technologies on our website.",
 };
 
 export default function CookiePolicyPage() {
@@ -88,10 +88,10 @@ export default function CookiePolicyPage() {
                                 If you have any questions about our use of cookies or other technologies, please email us at:
                             </p>
                             <div className="bg-white/[0.05] p-6 rounded-2xl border border-white/5">
-                                <p className="text-white font-semibold italic">Millionsystem HQ</p>
+                                <p className="text-white font-semibold italic">MillionSystems HQ</p>
                                 <p className="text-muted-foreground">Turner Business Centre, Greengate</p>
                                 <p className="text-muted-foreground">Middleton, Manchester M24 1RU</p>
-                                <p className="text-purple-400 mt-2">privacy@millionsystem.com</p>
+                                <p className="text-purple-400 mt-2">privacy@millionsystems.com</p>
                             </div>
                         </section>
 

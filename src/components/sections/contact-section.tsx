@@ -177,9 +177,9 @@ export function ContactSection() {
                                 {
                                     icon: Mail,
                                     title: "Email Us",
-                                    value: "info@millionsystem.com",
+                                    value: "info@millionsystems.com",
                                     sub: "Send us an email anytime",
-                                    href: "mailto:info@millionsystem.com",
+                                    href: "mailto:info@millionsystems.com",
                                 },
                                 {
                                     icon: Phone,

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
-import { Github, Twitter, Linkedin, Heart } from "lucide-react";
+import { Github, Twitter, Linkedin } from "lucide-react";
+import { Logo } from "@/components/shared/logo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,9 +10,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
           <div className="md:col-span-2 space-y-4">
-            <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500">
-              Millionsystem
-            </Link>
+            <Logo />
             <p className="text-muted-foreground max-w-sm">
               Crafting exceptional digital experiences for forward-thinking brands.
               We build web applications that look beautiful and perform flawlessly.
@@ -56,7 +54,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} Millionsystem. All rights reserved.
+            &copy; {currentYear} MillionSystems. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">

@@ -17,7 +17,7 @@ const contactFormSchema = z.object({
 });
 
 const TEAM_EMAILS = ["imfaisii009@gmail.com", "haamzaaay@gmail.com", "ruigostadefrango@gmail.com"];
-const FROM_EMAIL = "MillionSystem <info@millionsystems.com>";
+const FROM_EMAIL = "MillionSystems <info@millionsystems.com>";
 
 export async function POST(request: Request) {
   try {
@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     const userConfirmationEmail = {
       from: FROM_EMAIL,
       to: data.email,
-      subject: `Thank You for Contacting MillionSystem - ${data.projectType}`,
+      subject: `Thank You for Contacting MillionSystems - ${data.projectType}`,
       html: ContactConfirmationEmail({
         firstName: data.firstName,
         lastName: data.lastName,

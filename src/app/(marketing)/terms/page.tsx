@@ -2,8 +2,8 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Terms of Service | Millionsystem",
-    description: "Read the terms and conditions for using Millionsystem's services and website.",
+    title: "Terms of Service | MillionSystems",
+    description: "Read the terms and conditions for using MillionSystems's services and website.",
 };
 
 export default function TermsOfServicePage() {
@@ -35,7 +35,7 @@ export default function TermsOfServicePage() {
                         <section className="space-y-4">
                             <h2 className="text-2xl font-bold text-white">1. Agreement to Terms</h2>
                             <p className="text-muted-foreground leading-relaxed">
-                                These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Millionsystem ("we," "us" or "our"), concerning your access to and use of our website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto.
+                                These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and MillionSystems ("we," "us" or "our"), concerning your access to and use of our website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto.
                             </p>
                         </section>
 
@@ -69,7 +69,7 @@ export default function TermsOfServicePage() {
                         <section className="space-y-4">
                             <h2 className="text-2xl font-bold text-white">5. Governing Law</h2>
                             <p className="text-muted-foreground leading-relaxed">
-                                These Terms shall be governed by and defined following the laws of United Kingdom. Millionsystem and yourself irrevocably consent that the courts of United Kingdom shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.
+                                These Terms shall be governed by and defined following the laws of United Kingdom. MillionSystems and yourself irrevocably consent that the courts of United Kingdom shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.
                             </p>
                         </section>
 
@@ -79,10 +79,10 @@ export default function TermsOfServicePage() {
                                 In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:
                             </p>
                             <div className="bg-white/[0.05] p-6 rounded-2xl border border-white/5">
-                                <p className="text-white font-semibold italic">Millionsystem HQ</p>
+                                <p className="text-white font-semibold italic">MillionSystems HQ</p>
                                 <p className="text-muted-foreground">Turner Business Centre, Greengate</p>
                                 <p className="text-muted-foreground">Middleton, Manchester M24 1RU</p>
-                                <p className="text-blue-400 mt-2">legal@millionsystem.com</p>
+                                <p className="text-blue-400 mt-2">legal@millionsystems.com</p>
                             </div>
                         </section>
 

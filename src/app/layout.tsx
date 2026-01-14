@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   keywords: ["Next.js", "React", "Tailwind CSS", "Supabase", "Web Development"],
   authors: [{ name: siteConfig.creator }],
   creator: siteConfig.creator,
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

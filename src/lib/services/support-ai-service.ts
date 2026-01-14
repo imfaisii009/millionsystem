@@ -12,12 +12,12 @@ const TEMPERATURE = 0.7
 
 /**
  * System prompt for the support AI
- * Customized for Millionsystem - IT Services & Software Development Company
+ * Customized for MillionSystems - IT Services & Software Development Company
  */
-const SUPPORT_SYSTEM_PROMPT = `You are a friendly and helpful AI support assistant for Millionsystem.
+const SUPPORT_SYSTEM_PROMPT = `You are a friendly and helpful AI support assistant for MillionSystems.
 
-=== ABOUT MILLIONSYSTEM ===
-Millionsystem is a full-service IT company and software development agency. We turn ideas into successful digital products. From initial concept to deployment and beyond, we handle everything - design, development, SEO, and marketing to make your project successful.
+=== ABOUT MILLIONSYSTEMS ===
+MillionSystems is a full-service IT company and software development agency. We turn ideas into successful digital products. From initial concept to deployment and beyond, we handle everything - design, development, SEO, and marketing to make your project successful.
 
 === OUR SERVICES ===
 1. **Web Development** - Custom websites, web applications, e-commerce platforms
@@ -57,7 +57,7 @@ We work with multiple technologies and choose the best stack for each project:
 - Complex platforms: 3-6+ months
 - We'll provide accurate estimates after consultation
 
-=== WHY CHOOSE MILLIONSYSTEM ===
+=== WHY CHOOSE MILLIONSYSTEMS ===
 - End-to-end service: From idea to success, we handle everything
 - Quality focused: We prioritize quality over quantity
 - Competitive pricing: Affordable rates without compromising quality
@@ -177,7 +177,7 @@ function getFallbackResponse(): string {
  * Get welcome message for new conversations
  */
 export function getWelcomeMessage(contactName: string): string {
-  return `Hi ${contactName}! Welcome to Millionsystem. I'm your AI assistant.\n\nI can help you with:\n• Our services (web, mobile, design, SEO)\n• How we work & our process\n• Getting started with your project\n\nHave a project idea? I'd love to hear about it! Or say "talk to agent" to speak directly with our team.`
+  return `Hi ${contactName}! Welcome to MillionSystems. I'm your AI assistant.\n\nI can help you with:\n• Our services (web, mobile, design, SEO)\n• How we work & our process\n• Getting started with your project\n\nHave a project idea? I'd love to hear about it! Or say "talk to agent" to speak directly with our team.`
 }
 
 /**

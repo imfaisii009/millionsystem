@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
     try {
         const response = await fetch(url, {
             headers: {
-                'User-Agent': 'Millionsystem-Client/1.0'
+                'User-Agent': 'MillionSystems-Client/1.0'
             }
         })
 

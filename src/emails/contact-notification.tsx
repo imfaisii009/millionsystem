@@ -45,7 +45,7 @@ export function ContactNotificationEmail({
                 <tr>
                   <td>
                     <h1 style="margin: 0; color: #ffffff; font-size: 20px; font-weight: 700;">
-                      MillionSystem
+                      MillionSystems
                     </h1>
                   </td>
                   <td align="right">
@@ -159,7 +159,7 @@ ${message}
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top: 32px;">
                 <tr>
                   <td align="center">
-                    <a href="mailto:${email}?subject=Re: Your ${projectType} Inquiry - MillionSystem&body=Hi ${firstName},%0D%0A%0D%0AThank you for reaching out to us about your ${projectType} project.%0D%0A%0D%0A" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%); color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 15px; font-weight: 600;">
+                    <a href="mailto:${email}?subject=Re: Your ${projectType} Inquiry - MillionSystems&body=Hi ${firstName},%0D%0A%0D%0AThank you for reaching out to us about your ${projectType} project.%0D%0A%0D%0A" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%); color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 15px; font-weight: 600;">
                       Reply to ${firstName}
                     </a>
                   </td>
@@ -172,7 +172,7 @@ ${message}
           <tr>
             <td style="background-color: #f9fafb; padding: 24px 40px; border-top: 1px solid #e5e7eb;">
               <p style="margin: 0; color: #6b7280; font-size: 13px; text-align: center;">
-                This email was sent from the MillionSystem contact form.<br>
+                This email was sent from the MillionSystems contact form.<br>
                 <span style="color: #9ca3af;">Received at ${new Date().toLocaleString("en-GB", { dateStyle: "full", timeStyle: "short" })}</span>
               </p>
             </td>

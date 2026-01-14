@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Terminal, Maximize2, Minus, X } from "lucide-react";
 
 const codeSnippet = `// Initializing Next-Gen Ecosystem...
-const future = new Millionsystem();
+const future = new MillionSystems();
 
 await future.innovate({
   target: "Global Market",
@@ -44,7 +44,7 @@ export function CodeTypewriter() {
             <div className="flex items-center justify-between px-4 py-3 bg-[#252526] border-b border-white/5">
                 <div className="flex items-center gap-2">
                     <Terminal className="w-4 h-4 text-primary" />
-                    <span className="text-xs text-muted-foreground font-mono">dev@millionsystem:~/project</span>
+                    <span className="text-xs text-muted-foreground font-mono">dev@millionsystems:~/project</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                     <Minus className="w-3 h-3 hover:text-white cursor-pointer" />

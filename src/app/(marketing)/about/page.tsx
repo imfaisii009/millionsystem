@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn more about Millionsystem",
+  description: "Learn more about MillionSystems",
 };
 
 export default function AboutPage() {
@@ -18,7 +18,7 @@ export default function AboutPage() {
 
         <div className="prose prose-gray max-w-none">
           <p>
-            Millionsystem is a modern web application built with the latest
+            MillionSystems is a modern web application built with the latest
             technologies and best practices. Our mission is to provide developers
             with the tools they need to build amazing products quickly and
             efficiently.

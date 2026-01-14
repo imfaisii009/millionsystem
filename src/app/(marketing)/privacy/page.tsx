@@ -2,8 +2,8 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Privacy Policy | Millionsystem",
-    description: "Learn how Millionsystem protects and manages your personal data.",
+    title: "Privacy Policy | MillionSystems",
+    description: "Learn how MillionSystems protects and manages your personal data.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -35,7 +35,7 @@ export default function PrivacyPolicyPage() {
                         <section className="space-y-4">
                             <h2 className="text-2xl font-bold text-white">1. Introduction</h2>
                             <p className="text-muted-foreground leading-relaxed">
-                                At Millionsystem, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+                                At MillionSystems, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
                             </p>
                         </section>
 
@@ -91,10 +91,10 @@ export default function PrivacyPolicyPage() {
                                 If you have questions or comments about this Privacy Policy, please contact us at:
                             </p>
                             <div className="bg-white/[0.05] p-6 rounded-2xl border border-white/5">
-                                <p className="text-white font-semibold italic">Millionsystem HQ</p>
+                                <p className="text-white font-semibold italic">MillionSystems HQ</p>
                                 <p className="text-muted-foreground">Turner Business Centre, Greengate</p>
                                 <p className="text-muted-foreground">Middleton, Manchester M24 1RU</p>
-                                <p className="text-primary mt-2">legal@millionsystem.com</p>
+                                <p className="text-primary mt-2">legal@millionsystems.com</p>
                             </div>
                         </section>
 

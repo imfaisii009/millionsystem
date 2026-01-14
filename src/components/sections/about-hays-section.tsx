@@ -68,10 +68,10 @@ export function AboutHaysSection() {
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-                            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Millionsystem</span>
+                            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">MillionSystems</span>
                         </h2>
                         <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
-                            Millionsystem is a creative development studio specializing in cutting-edge digital solutions,
+                            MillionSystems is a creative development studio specializing in cutting-edge digital solutions,
                             game development, and interactive experiences. With a focus on innovation and quality,
                             we turn bold ideas into powerful applications using the latest in Unity technology,
                             cross-platform tools, and modern design.

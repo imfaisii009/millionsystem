@@ -27,7 +27,7 @@ export function ContactConfirmationEmail({
           <tr>
             <td style="background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%); padding: 40px 40px 30px; text-align: center;">
               <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">
-                MillionSystem
+                MillionSystems
               </h1>
               <p style="margin: 8px 0 0; color: rgba(255, 255, 255, 0.9); font-size: 14px;">
                 Transforming Ideas Into Reality
@@ -120,14 +120,14 @@ export function ContactConfirmationEmail({
           <tr>
             <td style="background-color: #1f2937; padding: 32px 40px; text-align: center;">
               <p style="margin: 0 0 8px; color: #ffffff; font-size: 16px; font-weight: 600;">
-                MillionSystem
+                MillionSystems
               </p>
               <p style="margin: 0 0 16px; color: #9ca3af; font-size: 13px; line-height: 1.5;">
                 Turner Business Centre, Greengate<br>
                 Middleton, Manchester M24 1RU
               </p>
               <p style="margin: 0; color: #6b7280; font-size: 12px;">
-                &copy; ${new Date().getFullYear()} MillionSystem. All rights reserved.
+                &copy; ${new Date().getFullYear()} MillionSystems. All rights reserved.
               </p>
             </td>
           </tr>

@@ -1,0 +1,597 @@
+---
+alwaysApply: false
+---
+
+# Expert-Level On-Page SEO Checklist for MillionSystems
+
+**Domain:** millionsystems.com
+**Industry:** IT Services & Software Development
+**Author Standard:** MillionSystems Technical Team
+**Phone:** +44 7943 111370
+**Email:** info@millionsystems.com
+
+---
+
+## Part 1: Strategic & Foundational Blueprint
+
+### 1.1 Align with User Intent & Semantic SEO
+
+**Target Intent Types:**
+- **Informational:** "What is custom software development?", "How much does app development cost?", "Best tech stack for startups"
+- **Transactional:** "Hire web developers", "Get software quote", "IT consulting services"
+- **Commercial Investigation:** "Best software agency UK", "MillionSystems reviews", "Top web development companies"
+
+**Primary Keyword Clusters:**
+
+| Cluster | Primary Keywords | Secondary Keywords |
+|---------|-----------------|-------------------|
+| Web Development | "web development company", "custom website development", "Next.js development" | "React developers", "frontend development", "full-stack development" |
+| Mobile Apps | "mobile app development", "iOS app developers", "Android development" | "cross-platform apps", "React Native development", "Flutter developers" |
+| AI & Automation | "AI development services", "machine learning solutions", "automation consulting" | "chatbot development", "AI integration", "intelligent automation" |
+| Cloud Solutions | "cloud development services", "AWS solutions", "cloud migration" | "serverless development", "DevOps services", "cloud architecture" |
+| UI/UX Design | "UI/UX design services", "product design agency", "user experience design" | "interface design", "design systems", "prototyping services" |
+| Enterprise | "enterprise software development", "custom CRM development", "business solutions" | "ERP development", "digital transformation", "legacy modernization" |
+
+**Benchmark SERPs & Information Gain:**
+- Competitors have generic service pages → Create detailed case studies with metrics
+- Most lack technical depth → Provide technology comparisons and decision guides
+- Few have interactive tools → Offer project estimators, tech stack quizzes
+- Missing thought leadership → Publish technical blog posts and whitepapers
+
+**People-First Content Requirements:**
+- Original data: Project completion stats, client satisfaction rates
+- Real client testimonials with company names and industries
+- Average project timelines and milestones
+- Technology expertise showcased with real examples
+- Before/after case studies with measurable business impact
+
+### 1.2 Demonstrate E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
+
+**Author Bio Standard:**
+```
+MillionSystems Technical Team
+10+ years in software development and IT consulting
+Specialists in modern web technologies, AI, and cloud solutions
+```
+
+**Company Credentials to Display:**
+- Certified development team (AWS, Google Cloud, etc.)
+- Portfolio of successful projects
+- Industry-specific experience
+- Client retention rate
+- Years in business
+- Team size and expertise areas
+
+**Trust Signal Pages Required:**
+- [x] About Us (company story, team, mission, values)
+- [x] Contact Us (phone, email, address, business hours)
+- [x] Privacy Policy (GDPR compliant)
+- [x] Terms of Service
+- [x] Portfolio / Case Studies
+- [x] Client Testimonials / Reviews
+
+**Authoritative Source Links:**
+- Industry publications (TechCrunch, Wired, etc.)
+- Technology documentation (React docs, AWS docs)
+- Research papers and industry reports
+- Government business registries
+
+**Freshness Signals:**
+- "Last Updated: [Date]" on service pages
+- "Technologies We Use in 2025" sections
+- Blog updated weekly/monthly
+- Case studies with recent project dates
+
+---
+
+## Part 2: Core Technical Implementation
+
+### 2.1 URL & Site Structure
+
+**Clean URL Architecture:**
+```
+/                                    # Homepage
+/services                            # Services overview
+/contact                             # Contact / Get a Quote
+
+# Services
+/services/web-development            # Web development
+/services/mobile-app-development     # Mobile apps
+/services/ai-automation              # AI & Automation
+/services/cloud-solutions            # Cloud services
+/services/ui-ux-design               # Design services
+/services/enterprise-solutions       # Enterprise software
+
+# Portfolio
+/portfolio                           # Portfolio index
+/portfolio/[project-slug]            # Individual case studies
+
+# Resources
+/blog                                # Blog index
+/blog/[slug]                         # Individual posts
+/resources/[guide-slug]              # Downloadable resources
+
+# Legal & Info
+/about                               # About us
+/privacy                             # Privacy Policy
+/terms                               # Terms of Service
+/cookies                             # Cookie Policy
+```
+
+**URL Rules:**
+- All lowercase, hyphen-separated
+- No trailing slashes
+- HTTPS only with HTTP → HTTPS redirect
+- www → non-www redirect (canonical)
+
+### 2.2 Crawlability & Indexability
+
+**robots.txt Configuration:**
+```
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /dashboard/
+
+# Allow AI crawlers for discovery
+User-agent: GPTBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://millionsystems.com/sitemap.xml
+```
+
+**Indexing Requirements:**
+- XML sitemap at /sitemap.xml (auto-generated by Next.js)
+- IndexNow integration for Bing instant indexing
+- Google Search Console verification
+- Bing Webmaster Tools verification
+- Submit new pages within 24 hours of publication
+
+### 2.3 Canonicalization & Duplicate Content
+
+**Canonical Tag Rules:**
+- Every page self-references with canonical tag
+- Service pages: canonical to self (unique content per service)
+- Blog posts: canonical to self
+- Paginated content: canonical to page 1 OR rel="prev/next"
+
+**Parameter Handling:**
+- UTM parameters: exclude from canonical
+- Filter parameters: exclude from index
+- Add to next.config.mjs: `trailingSlash: false`
+
+**Language/Region:**
+```html
+<link rel="alternate" hreflang="en" href="https://millionsystems.com/[page]" />
+<link rel="alternate" hreflang="x-default" href="https://millionsystems.com/[page]" />
+```
+
+### 2.4 Internal Linking Strategy
+
+**Hub & Spoke Model:**
+```
+Homepage (Hub)
+├── /services (Primary Spoke)
+│   ├── → /services/web-development
+│   ├── → /services/mobile-app-development
+│   └── → /portfolio
+├── /portfolio (Primary Spoke)
+│   ├── → /services/[related-service]
+│   ├── → /contact
+│   └── → /blog/[related-post]
+├── /blog (Content Spoke)
+│   ├── → /services/[related-service]
+│   ├── → /portfolio/[related-project]
+│   └── → /contact
+└── /contact (Conversion Spoke)
+    ├── → /services
+    ├── → /portfolio
+    └── → /about
+```
+
+**Linking Rules:**
+- Every key page gets 3+ contextual internal links
+- Use keyword-rich anchor text: "custom web development services", "view our mobile app portfolio"
+- No orphan pages (every page linked from at least 2 others)
+- Footer links to all main sections
+- Breadcrumb navigation on all pages
+
+---
+
+## Part 3: On-Page Content & Elements
+
+### 3.1 Title & Meta Description Templates
+
+**Homepage:**
+```
+Title: MillionSystems | Custom Software Development & IT Solutions
+Meta: Transform your ideas into powerful digital products. Web development, mobile apps, AI solutions & more. Get a free consultation today. Based in Manchester, UK.
+```
+
+**Service Pages:**
+```
+Title: [Service Name] Services | MillionSystems
+Meta: Professional [service name] for businesses of all sizes. Expert team, agile methodology, proven results. Get a free project estimate from our [service] specialists.
+```
+
+**Portfolio/Case Study:**
+```
+Title: [Project Name] | [Industry] Case Study | MillionSystems
+Meta: See how we helped [Client] achieve [result]. [Technology stack] solution delivering [key metric]. Read the full case study.
+```
+
+**Blog Posts:**
+```
+Title: [Primary Keyword] | [Secondary Keyword] | MillionSystems Blog
+Meta: [Compelling 155-char description with primary keyword, value statement, and soft CTA]
+```
+
+**Title Rules:**
+- Keep under 60 characters
+- Primary keyword first
+- Include year for trending topics (freshness signal)
+- Brand name at end
+
+### 3.2 Heading Structure Template
+
+**Standard Page Structure:**
+```html
+<h1>Custom Software Development Services</h1>
+  <h2>Our Development Process</h2>
+    <h3>Discovery & Planning</h3>
+    <h3>Design & Prototyping</h3>
+    <h3>Development & Testing</h3>
+    <h3>Launch & Support</h3>
+  <h2>Technologies We Use</h2>
+    <h3>Frontend Technologies</h3>
+    <h3>Backend Technologies</h3>
+    <h3>Cloud & DevOps</h3>
+  <h2>Featured Projects</h2>
+  <h2>Client Testimonials</h2>
+  <h2>Frequently Asked Questions</h2>
+  <h2>Start Your Project Today</h2>
+```
+
+**H1 Rules:**
+- One H1 per page only
+- Contains primary keyword
+- Matches page title intent
+- Clear value proposition
+
+### 3.3 Visual & Media Optimization
+
+**Image Requirements:**
+- Format: WebP with JPG fallback
+- Compression: 80% quality, under 100KB for thumbnails
+- Dimensions: Responsive with srcset
+- Alt text pattern: "[Description] [Context] [Keyword]"
+
+**Alt Text Examples:**
+```
+"Modern dashboard interface designed by MillionSystems for healthcare client"
+"Mobile app development process flowchart showing agile methodology"
+"Team of software developers collaborating on enterprise project"
+"Before and after website redesign showcasing performance improvements"
+```
+
+### 3.4 Readability & Formatting
+
+**TL;DR Section (Required on all key pages):**
+```html
+<div class="tldr-summary bg-primary/10 p-6 rounded-xl mb-8">
+  <p class="font-semibold text-lg mb-2">Quick Summary:</p>
+  <p>MillionSystems is a full-service IT company specializing in custom software development.
+  We transform your ideas into powerful digital products, handling everything from design
+  to deployment. Get in touch for a free consultation.</p>
+</div>
+```
+
+**Content Formatting Rules:**
+- Paragraphs: 2-3 sentences max
+- Bullet points for lists of 3+ items
+- Bold key takeaways and important numbers
+- Tables for feature comparisons
+- Callout boxes for important notices
+- FAQ section on every main page
+
+---
+
+## Part 4: Page Experience & Performance
+
+### 4.1 Core Web Vitals Targets
+
+| Metric | Target | Implementation |
+|--------|--------|----------------|
+| LCP | < 2.5s | Preload hero image, inline critical CSS, lazy load below-fold |
+| INP | < 200ms | Minimize JS, optimize forms, use React.memo |
+| CLS | < 0.1 | Reserve space for images, forms, and dynamic content |
+
+**Performance Checklist:**
+- [ ] Hero section loads in < 1.5s
+- [ ] Contact form interactive in < 2s
+- [ ] Phone number clickable immediately
+- [ ] Images lazy loaded below fold
+- [ ] No layout shifts on form submission
+- [ ] Bundle size < 200KB initial load
+
+### 4.2 UX & Accessibility
+
+**Mobile-First Requirements:**
+- 44×44px minimum tap targets
+- Phone number prominent and clickable
+- Form fields appropriately sized
+- Safe area padding on all devices
+- Readable text without zooming (16px minimum)
+
+**Accessibility (WCAG AA):**
+- Contrast ratio ≥ 4.5:1
+- ARIA labels on all interactive elements
+- Keyboard navigation support
+- Skip to main content link
+- Focus indicators visible
+- Screen reader tested
+
+### 4.3 Security & Trust Signals
+
+**Trust Badge Placement:**
+```html
+<!-- Above the fold -->
+<div class="trust-badges flex gap-4 items-center">
+  <span>✓ Trusted by 50+ businesses</span>
+  <span>✓ 4.9/5 client rating</span>
+  <span>✓ 24/7 support</span>
+</div>
+
+<!-- Near forms -->
+<div class="security-notice">
+  <span>🔒 Your data is protected under UK GDPR</span>
+  <span>✓ Free consultation, no obligation</span>
+</div>
+```
+
+---
+
+## Part 5: Structured Data for Enhanced Visibility
+
+### 5.1 Required Schema Types
+
+**Organization Schema (site-wide):**
+```typescript
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MillionSystems",
+  "url": "https://millionsystems.com",
+  "logo": "https://millionsystems.com/logo.png",
+  "description": "Full-service IT company specializing in custom software development, web applications, mobile apps, and AI solutions.",
+  "telephone": "+447943111370",
+  "email": "info@millionsystems.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Turner Business Centre, Greengate",
+    "addressLocality": "Middleton, Manchester",
+    "postalCode": "M24 1RU",
+    "addressCountry": "GB"
+  },
+  "sameAs": [
+    "https://github.com/millionsystems",
+    "https://linkedin.com/company/millionsystems",
+    "https://twitter.com/millionsystems"
+  ]
+}
+```
+
+**LocalBusiness Schema:**
+```typescript
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "MillionSystems",
+  "description": "Custom software development and IT consulting services.",
+  "telephone": "+447943111370",
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United Kingdom"
+  }
+}
+```
+
+**FAQPage Schema:**
+```typescript
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services does MillionSystems offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer custom software development, web development, mobile app development, AI & automation solutions, cloud services, and UI/UX design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a typical project take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Project timelines vary based on scope. A simple website takes 2-4 weeks, while complex applications may take 3-6 months. We provide detailed timelines during our free consultation."
+      }
+    }
+  ]
+}
+```
+
+**Service Schema:**
+```typescript
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Custom Software Development",
+  "provider": {
+    "@type": "Organization",
+    "name": "MillionSystems"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United Kingdom"
+  },
+  "description": "End-to-end custom software development services for businesses."
+}
+```
+
+**BreadcrumbList Schema:**
+```typescript
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://millionsystems.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://millionsystems.com/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Web Development",
+      "item": "https://millionsystems.com/services/web-development"
+    }
+  ]
+}
+```
+
+---
+
+## Part 6: Engagement & Long-Term SEO
+
+### 6.1 Above-the-Fold CTA Strategy
+
+**Primary CTA (Homepage):**
+```html
+<section class="hero">
+  <h1>Transform Your Ideas Into Powerful Digital Products</h1>
+  <p>We build custom software solutions that drive business growth.</p>
+
+  <div class="cta-buttons">
+    <a href="/contact" class="btn-primary">Start Your Project</a>
+    <a href="tel:+447943111370" class="btn-secondary">Call +44 7943 111370</a>
+  </div>
+
+  <div class="trust-indicators">
+    <span>✓ Free consultation</span>
+    <span>✓ Agile methodology</span>
+    <span>✓ 24/7 support</span>
+  </div>
+</section>
+```
+
+### 6.2 Interactive Tools (High Engagement)
+
+**Recommended Tools:**
+- [ ] Project Estimator / Quote Calculator
+- [ ] Technology Stack Quiz
+- [ ] ROI Calculator
+- [ ] Booking/Scheduling Widget
+
+### 6.3 Content Freshness Strategy
+
+**Blog Update Schedule:**
+- Weekly: 1-2 technical posts or industry news
+- Monthly: Case study or project showcase
+- Quarterly: Technology trend reports
+- Annually: Year-in-review and predictions
+
+---
+
+## Part 7: Page-Specific SEO Checklist
+
+### Landing Page Checklist
+
+Before publishing any page, verify:
+
+**Content & Intent:**
+- [ ] Clear H1 with primary keyword
+- [ ] TL;DR summary in first 100 words
+- [ ] Unique value proposition stated
+- [ ] 3+ internal links to related content
+- [ ] FAQ section with 3-5 questions
+- [ ] Trust signals visible
+- [ ] Clear CTA above fold
+- [ ] Phone number clickable
+
+**Technical:**
+- [ ] Title tag < 60 chars with keyword
+- [ ] Meta description < 155 chars with CTA
+- [ ] Canonical tag self-referencing
+- [ ] OG tags for social sharing
+- [ ] Schema markup implemented
+- [ ] Breadcrumb navigation present
+- [ ] Mobile responsive verified
+- [ ] Core Web Vitals passing
+
+**Media:**
+- [ ] Hero image optimized (WebP, < 100KB)
+- [ ] All images have descriptive alt text
+- [ ] No missing image sources
+
+**Links:**
+- [ ] No broken internal links
+- [ ] External links open in new tab
+- [ ] Navigation includes page (not orphaned)
+
+---
+
+## Quick Reference: Brand Standards
+
+| Element | Standard |
+|---------|----------|
+| Phone | +44 7943 111370 (always with tel: link) |
+| Email | info@millionsystems.com |
+| Primary Color | #8b5cf6 (Electric Violet) |
+| Background | #030014 (Deep Space Black) |
+| Accent Color | #3b82f6 (Blue) |
+| Address | Turner Business Centre, Greengate, Middleton, Manchester M24 1RU |
+
+---
+
+## Implementation Priority
+
+**Phase 1 (Critical):**
+1. Homepage SEO optimization
+2. Service pages with proper schema
+3. Contact page optimization
+4. FAQ schema implementation
+
+**Phase 2 (Important):**
+1. Portfolio/case study pages
+2. Blog post optimization
+3. About page E-E-A-T signals
+4. Breadcrumb implementation
+
+**Phase 3 (Enhancement):**
+1. Advanced structured data
+2. Voice search optimization
+3. Video schema (if adding videos)
+4. Content freshness automation
+
+---
+
+**Last Updated:** 2025-01-14
+**Next Review:** Monthly or after major site changes

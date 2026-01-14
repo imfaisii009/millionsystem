@@ -15,7 +15,7 @@ export function Sidebar() {
     <aside className="hidden md:flex w-64 flex-col border-r bg-background">
       <div className="flex h-16 items-center border-b px-6">
         <Link href="/dashboard" className="font-bold text-xl">
-          Millionsystem
+          MillionSystems
         </Link>
       </div>
       <nav className="flex-1 space-y-1 p-4">
