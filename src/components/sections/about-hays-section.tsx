@@ -5,50 +5,50 @@ import { CheckCircle2, Code2, Smartphone, Palette, Cloud, Database, Shield, Zap 
 
 const services = [
     {
-        title: "Web Development",
-        desc: "Modern frameworks and technologies",
+        title: "Web Platforms",
+        desc: "Scalable, high-performance web applications built for conversion.",
         icon: Code2,
         color: "text-blue-400"
     },
     {
-        title: "Mobile Apps",
-        desc: "iOS and Android applications",
+        title: "Mobile Ecosystems",
+        desc: "Native-grade iOS & Android apps that users love.",
         icon: Smartphone,
         color: "text-purple-400"
     },
     {
-        title: "UI/UX Design",
-        desc: "Beautiful and intuitive interfaces",
+        title: "Strategic UI/UX",
+        desc: "Data-driven design that guides user behavior.",
         icon: Palette,
         color: "text-pink-400"
     },
     {
-        title: "Cloud Solutions",
-        desc: "Scalable and secure infrastructure",
+        title: "Cloud Architecture",
+        desc: "Serverless, resilient infrastructure that scales with you.",
         icon: Cloud,
         color: "text-indigo-400"
     },
     {
-        title: "Backend Systems",
-        desc: "Robust and efficient APIs",
+        title: "Backend Core",
+        desc: "The invisible engine powering your business logic.",
         icon: Database,
         color: "text-blue-500"
     },
     {
-        title: "Security",
-        desc: "Enterprise-grade security measures",
+        title: "Cyber Security",
+        desc: "Fortress-level protection for your digital assets.",
         icon: Shield,
         color: "text-emerald-400"
     }
 ];
 
 const benefits = [
-    "Expert team with 10+ years of experience",
-    "Agile development methodology",
-    "24/7 support and maintenance",
-    "Competitive pricing and transparent billing",
-    "Modern tech stack and best practices",
-    "Proven track record of successful projects"
+    "Elite Engineering Team (Top 1% Talent)",
+    "Rapid Prototyping & Agile Delivery",
+    "Enterprise-Grade Security Standards",
+    "Dedicated 24/7 Technical Support",
+    "Future-Proof Tech Stack (Next.js, AI)",
+    "Proven ROI-Driven Methodology"
 ];
 
 export function AboutHaysSection() {
@@ -68,13 +68,12 @@ export function AboutHaysSection() {
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-                            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">MillionSystems</span>
+                            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">MillionSystems</span> Standard
                         </h2>
                         <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
-                            MillionSystems is a creative development studio specializing in cutting-edge digital solutions,
-                            game development, and interactive experiences. With a focus on innovation and quality,
-                            we turn bold ideas into powerful applications using the latest in Unity technology,
-                            cross-platform tools, and modern design.
+                            We are not just developers; we are strategic partners in your digital evolution.
+                            MillionSystems blends elite engineering with creative vision to build products
+                            that don't just function—they dominate markets.
                         </p>
                     </motion.div>
                 </div>
@@ -97,9 +96,10 @@ export function AboutHaysSection() {
                                     Our Mission
                                 </h3>
                                 <p className="text-lg text-zinc-400 leading-relaxed mb-6">
-                                    We fuse innovation and technology to elevate your business. Delivering stunning design
-                                    and seamless functionality that captivates users and drives exceptional experiences.
-                                    <span className="block mt-4 text-purple-300 font-medium italic">Your Partner in Digital Success.</span>
+                                    To empower ambitious businesses with technology that breaks barriers.
+                                    We believe in code that cleans up complexity and design that
+                                    clarifies purpose.
+                                    <span className="block mt-4 text-purple-300 font-medium italic">Building the infrastructure of your success.</span>
                                 </p>
                             </div>
                         </motion.div>
@@ -111,7 +111,7 @@ export function AboutHaysSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                         >
-                            <h3 className="text-3xl font-bold mb-8 text-white">Why Choose Us</h3>
+                            <h3 className="text-3xl font-bold mb-8 text-white">The Competitive Edge</h3>
                             <div className="grid sm:grid-cols-1 gap-4">
                                 {benefits.map((benefit, idx) => (
                                     <div key={idx} className="flex items-center gap-4 group">

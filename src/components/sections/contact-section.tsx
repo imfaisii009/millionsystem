@@ -157,14 +157,13 @@ export function ContactSection() {
                     <div className="flex flex-col gap-8">
                         <motion.div variants={itemVariants}>
                             <h2 className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-5xl">
-                                Let&apos;s Talk About
+                                Ready to Build the
                                 <br />
-                                Your Project
+                                <span className="italic">Impossible?</span>
                             </h2>
                             <p className="mt-4 text-lg text-slate-400">
-                                We&apos;re here to help you bring your ideas to life. Whether you
-                                have a specific project in mind or just want to explore
-                                possibilities, we&apos;d love to hear from you.
+                                You have the vision. We have the engineering power.
+                                Let's collaborate to build a digital product that defines your industry.
                             </p>
                         </motion.div>
 

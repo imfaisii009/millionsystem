@@ -15,50 +15,50 @@ import {
 
 const growthServices = [
     {
-        title: "SEO Optimization",
-        description: "Increase organic visibility and dominate search rankings with data-driven on-page and technical SEO.",
+        title: "Technical SEO",
+        description: "We don't guess; we engineer. Dominate search rankings with optimized site architecture and high-authority backlinks.",
         icon: Search,
-        features: ["Technical SEO", "Keyword Strategy", "Backlink Building"],
+        features: ["Core Web Vitals", "Semantic Schema", "Backlink Strategy"],
         gradient: "from-orange-500/20 to-yellow-500/20",
         border: "group-hover:border-orange-500/50"
     },
     {
-        title: "Social Media Growth",
-        description: "Build a powerful brand presence and engage your audience across all major social platforms.",
+        title: "Brand Authority",
+        description: "Turn your brand into a movement. We craft the voice and visuals that resonate with your target demographic.",
         icon: Share2,
-        features: ["Content Strategy", "Community Management", "Brand Voice"],
+        features: ["Visual Identity", "Voice & Tone", "Market Positioning"],
         gradient: "from-pink-500/20 to-purple-500/20",
         border: "group-hover:border-pink-500/50"
     },
     {
-        title: "Paid Advertising (PPC)",
-        description: "High-conversion ad campaigns tailored to your business goals across Google, Meta, and LinkedIn.",
+        title: "Performance Ads",
+        description: "Stop wasting budget. Our AI-driven ad campaigns target the exact users ready to buy your service.",
         icon: MousePointerClick,
-        features: ["Ad Management", "A/B Testing", "ROI Optimization"],
+        features: ["Lookalike Audiences", "Retargeting", "ROAS Focus"],
         gradient: "from-blue-500/20 to-indigo-500/20",
         border: "group-hover:border-blue-500/50"
     },
     {
-        title: "Marketing Automation",
-        description: "Streamline your sales funnel with intelligent email automation and CRM integration.",
+        title: "Conversion Pipelines",
+        description: "Turn visitors into revenue. We build automated funnels that nurture leads while you sleep.",
         icon: Target,
-        features: ["Email Funnels", "CRM Setup", "Lead Scoring"],
+        features: ["CRM Automation", "Lead Scoring", "Drip Campaigns"],
         gradient: "from-emerald-500/20 to-teal-500/20",
         border: "group-hover:border-emerald-500/50"
     },
     {
-        title: "Content Marketing",
-        description: "Authority-building content that converts visitors into loyal customers through storytelling.",
+        title: "Strategic Content",
+        description: "Content that solves problems. We write articles and guides that establish your company as the industry expert.",
         icon: Megaphone,
-        features: ["Blog Strategy", "Copywriting", "Video Content"],
+        features: ["Thought Leadership", "Case Studies", "Whitepapers"],
         gradient: "from-amber-500/20 to-orange-500/20",
         border: "group-hover:border-amber-500/50"
     },
     {
-        title: "Data & Analytics",
-        description: "Comprehensive reporting and insights to track every metric that matters for your business growth.",
+        title: "Deep Analytics",
+        description: "De-anonymize your traffic. We track every click to understand exactly what drives user behavior.",
         icon: BarChart3,
-        features: ["Custom Reporting", "User Behavior", "Conversion Tracking"],
+        features: ["User Heatmaps", "Cohort Analysis", "Funnel visualization"],
         gradient: "from-cyan-500/20 to-blue-500/20",
         border: "group-hover:border-cyan-500/50"
     }
@@ -85,7 +85,7 @@ export function DigitalGrowthSection() {
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono mb-6"
                     >
                         <TrendingUp size={14} />
-                        <span>// Digital Domination</span>
+                        <span>// Market Domination</span>
                     </motion.div>
 
                     <motion.h2
@@ -95,7 +95,7 @@ export function DigitalGrowthSection() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight"
                     >
-                        Accelerate Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-400 to-amber-400">Market Presence</span>
+                        Dominate Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-400 to-amber-400">Market Niche</span>
                     </motion.h2>
 
                     <motion.p
@@ -105,9 +105,9 @@ export function DigitalGrowthSection() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-lg text-zinc-400 leading-relaxed"
                     >
-                        We don&apos;t just build websites; we build brands that dominate their niche.
+                        We don&apos;t just build websites; we build revenue engines.
                         Our digital growth strategies are powered by data, fueled by creativity,
-                        and optimized for maximum ROI.
+                        and optimized for aggressive scaling.
                     </motion.p>
                 </div>
 

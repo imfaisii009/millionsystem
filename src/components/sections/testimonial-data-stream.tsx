@@ -17,47 +17,47 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
     {
         id: 1,
-        name: "Victor Thorne",
-        role: "CEO",
-        company: "Vertex",
-        content: "MillionSystems didn't just build a platform; they engineered a digital legacy. Their attention to architectural scalability is, frankly, generations ahead of the competition.",
-        metrics: "99.9% Uptime Scaled",
+        name: "Marcus Thorne",
+        role: "CTO",
+        company: "RetailFlow Global",
+        content: "MillionSystems didn't just build a platform; they engineered a survival strategy. We survived our biggest Black Friday traffic spike in history with 100% uptime thanks to their architectural overhaul.",
+        metrics: "99.99% Peak Uptime",
         avatar: "/avatars/ceo1.png"
     },
     {
         id: 2,
-        name: "Nora Vance",
-        role: "CTO",
-        company: "Novus",
-        content: "We needed a real-time AI integration that wouldn't choke under massive concurrency. The Nano Banana team delivered a solution that process 40k req/sec without breaking a sweat.",
-        metrics: "40k RPS Optimized",
+        name: "Sarah Chen",
+        role: "VP of Engineering",
+        company: "Vault Finance",
+        content: "Security is non-negotiable in FinTech. The team delivered a bank-grade audit trail and smart contract system that passed every external penetration test on the first try.",
+        metrics: "Bank-Grade Security",
         avatar: "/avatars/ceo2.png"
     },
     {
         id: 3,
-        name: "Zenon Wright",
+        name: "David Ross",
         role: "Founder",
-        company: "Zenith",
-        content: "The seamless transition from our legacy monolith to their cloud-native microservices architecture was flawless. Our deployment speed increased by 300% in the first month.",
-        metrics: "300% Velocity Boost",
+        company: "SaaSify Ops",
+        content: "They took our MVP and scaled it into a multi-tenant enterprise solution in under 3 months. The code quality is immaculate—clean, documented, and built for massive scale.",
+        metrics: "3x Faster Launch",
         avatar: "/avatars/ceo3.png"
     },
     {
         id: 4,
-        name: "Octavia Jenkins",
-        role: "CEO",
-        company: "Omni",
-        content: "Working with MillionSystems is like having a direct line to the future. Their full-stack capabilities transformed our complex bio-data into a stunning, intuitive interface.",
-        metrics: "50% Latency Reduction",
+        name: "Dr. Emily Viane",
+        role: "Director of Product",
+        company: "MediCore AI",
+        content: "Integrating complex ML models into a consumer app is typically a nightmare. MillionSystems made it look easy. Our AI response time dropped by 60% immediately post-launch.",
+        metrics: "60% Latency Drop",
         avatar: "/avatars/ceo4.png"
     },
     {
         id: 5,
-        name: "Nex Kade",
-        role: "Director",
-        company: "Nexus",
-        content: "Precision engineering at its finest. They understood our vision from day one and executed with extreme technical rigour. The best engineering partners we've ever had.",
-        metrics: "120% ROI Growth",
+        name: "James K.",
+        role: "Head of Digital",
+        company: "Global Freight",
+        content: "A true digital transformation partner. They didn't just build software; they optimized our entire operational workflow through intelligent automation. The ROI has been undeniable.",
+        metrics: "200% Efficiency Gain",
         avatar: "/avatars/ceo5.png"
     }
 ];

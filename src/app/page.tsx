@@ -73,14 +73,14 @@ export default function Home() {
                             className="inline-flex items-center rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-medium text-purple-300 backdrop-blur-xl shadow-[0_0_15px_rgba(168,85,247,0.1)]"
                         >
                             <Zap className="mr-2 h-4 w-4 text-purple-400 fill-purple-400" />
-                            Empowering Global Startup Growth
+                            Architecting the Next Gen of Digital
                         </div>
 
                         <div>
                             <h1 className="text-5xl md:text-7xl xl:text-8xl font-bold tracking-tighter leading-[1.1] text-white">
-                                Future-Driven <br />
+                                Engineering <br />
                                 <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-400 animate-gradient-x">
-                                    <span className="text-purple-500 opacity-70 font-mono">{"{"}</span> Software <br /> Development <span className="text-purple-500 opacity-70 font-mono">{"}"}</span>
+                                    <span className="text-purple-500 opacity-70 font-mono">{"{"}</span> Infinite <br /> Possibilities <span className="text-purple-500 opacity-70 font-mono">{"}"}</span>
                                 </span>
                             </h1>
                         </div>
@@ -88,20 +88,20 @@ export default function Home() {
                         <p
                             className="text-xl text-gray-400 max-w-[550px]"
                         >
-                            Pioneering digital solutions that redefine industries and empower businesses globally.
+                            We don't just write code; we engineer competitive advantages. From hyper-scalable platforms to AI-driven ecosystems, MillionSystems builds the technology that powers industry leaders.
                         </p>
 
                         <div
                             className="flex flex-col sm:flex-row gap-5"
                         >
-                            <Link href="/#services">
+                            <Link href="/#contact">
                                 <Button size="lg" className="rounded-xl text-base h-14 px-8 bg-[#8b5cf6] hover:bg-[#7c3aed] text-white shadow-[0_0_30px_rgba(139,92,246,0.3)] border-0">
-                                    Explore Our Services
+                                    Start Your Transformation
                                 </Button>
                             </Link>
                             <Link href="/#portfolio">
                                 <Button size="lg" variant="outline" className="rounded-xl text-base h-14 px-8 border-purple-500/20 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm">
-                                    View Case Studies
+                                    View Engineering Excellence
                                 </Button>
                             </Link>
                         </div>
@@ -152,7 +152,7 @@ export default function Home() {
 
             {/* Project Stack Section - Section 5 */}
             <section id="portfolio" className="container mx-auto px-4 md:px-6">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">Selected Work</h2>
+                <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center text-white tracking-tight">Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Artistry</span></h2>
                 <ProjectStack />
             </section>
 

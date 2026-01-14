@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /dashboard/
+Disallow: /settings/
+
+# Allow AI crawlers for discovery
+User-agent: GPTBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://millionsystems.com/sitemap.xml

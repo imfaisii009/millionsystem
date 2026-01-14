@@ -16,50 +16,50 @@ import {
 
 const codingServices = [
     {
-        title: "Frontend Engineering",
-        description: "Crafting pixel-perfect, high-performance web interfaces using Next.js, TypeScript, and Framer Motion.",
+        title: "Frontend Experience",
+        description: "Pixel-perfect interfaces that engage users instantly. We utilize Next.js and Framer Motion to create fluid, reactive web applications.",
         icon: Globe2,
         features: ["React / Next.js", "Server Components", "Tailwind CSS"],
         gradient: "from-blue-500/20 to-cyan-500/20",
         border: "group-hover:border-blue-500/50"
     },
     {
-        title: "Backend Architecture",
-        description: "Designing scalable, distributed server-side systems with Node.js, Go, and PostgreSQL.",
+        title: "Backend Resilience",
+        description: "Logic that never breaks. We engineer distributed systems with Node.js and Go that handle millions of requests without breaking a sweat.",
         icon: Terminal,
         features: ["Microservices", "REST / GraphQL", "Postgres / Redis"],
         gradient: "from-purple-500/20 to-pink-500/20",
         border: "group-hover:border-purple-500/50"
     },
     {
-        title: "AI & ML Integration",
-        description: "Implementing advanced AI capabilities using LLMs, Vector Databases, and custom model fine-tuning.",
+        title: "AI Integration",
+        description: "Future-proof your business. We embed custom LLMs and machine learning models directly into your workflow for intelligent automation.",
         icon: Cpu,
-        features: ["OpenAI / Anthropic", "Pinecone / Langchain", "Custom RAG"],
+        features: ["OpenAI / Anthropic", "Vector DBs", "Agents & RAG"],
         gradient: "from-green-500/20 to-emerald-500/20",
         border: "group-hover:border-green-500/50"
     },
     {
-        title: "App Modernization",
-        description: "Refactoring legacy monolithic applications into modern, cloud-native microservices.",
+        title: "Legacy Modernization",
+        description: "Don't let old code hold you back. We surgically refactor monolithic apps into agile, cloud-native microservices.",
         icon: Layers,
-        features: ["Legacy Migration", "Cloud-Native", "Performance Tuning"],
+        features: ["Risk-Free Migration", "Cloud-Native", "Performance Boost"],
         gradient: "from-orange-500/20 to-yellow-500/20",
         border: "group-hover:border-orange-500/50"
     },
     {
-        title: "Blockchain & Web3",
-        description: "Building secure smart contracts and decentralized applications for the future of finance.",
+        title: "Web3 & Blockchain",
+        description: "Decentralized trust. We audit and deploy smart contracts that secure high-value transactions on the blockchain.",
         icon: Binary,
-        features: ["Solidity / Rust", "Smart Contracts", "Hardhat / Foundry"],
+        features: ["Solidity / Rust", "Smart Contracts", "DeFi / NFT"],
         gradient: "from-indigo-500/20 to-purple-500/20",
         border: "group-hover:border-indigo-500/50"
     },
     {
-        title: "DevOps & Cloud",
-        description: "Architecting zero-downtime CI/CD pipelines and managing scalable infrastructure on AWS/GCP.",
+        title: "DevOps & CI/CD",
+        description: "Ship faster, sleep better. Our zero-downtime pipelines ensure your updates go live instantly and reliably.",
         icon: Workflow,
-        features: ["Docker / K8s", "Terraform / IaC", "Actions / GitLab"],
+        features: ["Docker / K8s", "Infrastructure as Code", "Auto-Scaling"],
         gradient: "from-red-500/20 to-rose-500/20",
         border: "group-hover:border-red-500/50"
     }
@@ -96,7 +96,7 @@ export function CodingServicesSection() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight"
                     >
-                        Full-Stack <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Coding Solutions</span>
+                        Precision <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Engineering</span>
                     </motion.h2>
 
                     <motion.p
