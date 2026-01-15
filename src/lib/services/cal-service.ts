@@ -102,6 +102,7 @@ export async function createBooking(
       name: input.name,
       email: input.email,
       notes: input.notes || '',
+      guests: ADDITIONAL_GUESTS, // Additional recipients for meeting notifications
     },
     metadata: {
       company: input.company || '',
@@ -110,8 +111,9 @@ export async function createBooking(
     },
     timeZone: input.timeZone,
     language: 'en',
-    guests: ADDITIONAL_GUESTS, // Additional recipients for meeting notifications
   }
+
+  console.log('Cal.com booking request body:', JSON.stringify(body, null, 2))
 
   const response = await fetch(url.toString(), {
     method: 'POST',
@@ -123,8 +125,9 @@ export async function createBooking(
 
   if (!response.ok) {
     const error = await response.text()
-    console.error('Cal.com booking error:', error)
-    throw new Error(`Failed to create booking: ${response.status}`)
+    console.error('Cal.com booking error response:', error)
+    console.error('Cal.com booking error status:', response.status)
+    throw new Error(`Failed to create booking: ${response.status} - ${error}`)
   }
 
   const data: CalBookingResponse = await response.json()
