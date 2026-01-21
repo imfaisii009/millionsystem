@@ -8,6 +8,15 @@ import Image from "next/image";
 
 const projects = [
     {
+        title: "MillionVPN",
+        description: "One VPN. Limitless possibilities. A high-performance privacy shield engineered for the modern web, featuring global coverage and military-grade encryption.",
+        image: "/projects/millionvpn.png",
+        techStack: ["Next.js", "WireGuard", "Global Network"],
+        color: "from-blue-600 to-violet-600",
+        shadow: "shadow-[0_0_100px_-20px_rgba(79,70,229,0.15)]",
+        link: "https://www.millionvpn.com/",
+    },
+    {
         title: "BioStream AI",
         description: "A neural interface for the biological age. We engineered a real-time DNA sequencing pipeline that reduces genomic analysis from weeks to seconds, powering the next generation of personalized medicine.",
         image: "/projects/biostream-ai.png",
@@ -329,8 +338,10 @@ export function ProjectStack() {
                                             <Image
                                                 src={getProject(0).image}
                                                 alt={`${getProject(0).title} full page screenshot`}
-                                                width={600}
-                                                height={1800}
+                                                width={1440}
+                                                height={3000}
+                                                quality={100}
+                                                sizes="(max-width: 768px) 100vw, 50vw"
                                                 className="w-full h-auto object-contain object-top"
                                                 priority={currentIndex === 0}
                                             />
