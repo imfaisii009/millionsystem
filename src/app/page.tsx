@@ -72,9 +72,12 @@ export default function Home() {
                 rootMargin="200px"
             >
                 <section id="portfolio" className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center text-white tracking-tight">
-                        Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Artistry</span>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center text-white tracking-tight">
+                        Projects We <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Develop</span>
                     </h2>
+                    <p className="text-center text-blue-100/40 text-lg mb-12 max-w-2xl mx-auto">
+                        We specialize in engineering high-performance platforms across these industries.
+                    </p>
                     <ProjectStack />
                 </section>
             </LazySection>
